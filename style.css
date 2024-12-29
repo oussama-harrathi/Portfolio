@@ -357,6 +357,9 @@ article .icon {
 
 #projects {
   position: relative;
+  padding: 2rem 0;
+  max-width: 100%; /* Prevents the section from going outside the viewport */
+  margin: 0 auto;
 }
 
 .color-container {
@@ -366,18 +369,59 @@ article .icon {
 
 .project-img {
   border-radius: 2rem;
-  width: 90%;
-  height: 90%;
+  width: 100%; /* Ensures images fit within their containers */
+  height: auto; /* Maintains aspect ratio */
 }
 
 .project-title {
   margin: 1rem;
   color: black;
+  font-size: 1.5rem;
+  text-align: center; /* Ensures the project titles are aligned */
 }
 
 .project-btn {
   color: black;
   border-color: rgb(163, 163, 163);
+  text-align: center;
+}
+
+/* Container for the projects */
+
+.article-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping of project items */
+  justify-content: space-between;
+  gap: 2rem; /* Adds space between project items */
+  margin-top: 2rem;
+}
+
+/* Article (project) item styling */
+article {
+  flex: 1 1 300px; /* Flex items will be flexible, minimum width of 300px */
+  max-width: 300px; /* Restrict the width of the project items */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+article .icon {
+  cursor: default;
+}
+
+/* Media Query for smaller screens (responsive layout) */
+@media (max-width: 768px) {
+  .article-container {
+    flex-direction: column; /* Stack projects vertically on smaller screens */
+    align-items: center;
+  }
+
+  article {
+    flex: 1 1 90%; /* Allow articles to take up more space */
+    max-width: 90%; /* Restrict maximum width to 90% */
+  }
 }
 
 /* CONTACT */
