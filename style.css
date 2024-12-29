@@ -353,21 +353,30 @@ article .icon {
   cursor: default;
 }
 
-/* PROJECTS SECTION */
-
-#projects {
-  position: relative;
+/* Just add this for mobile */
+@media (max-width: 768px) {
+  .about-containers {
+    margin: 0 1rem;
+  }
+  
+  .details-container {
+    overflow-x: hidden;
+  }
 }
+
+/* PROJECTS SECTION */
 
 .experience-details-container {
   margin-bottom: 2rem;
+  padding: 2rem;
 }
 
 .about-containers {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  gap: 4rem;
   margin: 2rem 0;
+  padding: 1rem;
 }
 
 .details-container {
@@ -394,6 +403,20 @@ article .icon {
   width: 90%;
   height: 90%;
   object-fit: cover;
+}
+
+/* Add specific styling for the arrow */
+#projects {
+  position: relative;
+  padding-bottom: 3rem; /* Add space for the arrow */
+}
+
+#projects .icon.arrow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2rem;
 }
 
 /* CONTACT */
